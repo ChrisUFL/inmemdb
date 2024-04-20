@@ -37,6 +37,7 @@ void InMemoryDB::commit()
 	}
 
 	DB = transactions;
+	transactionInit = false;
 }
 
 void InMemoryDB::rollback()
@@ -47,4 +48,5 @@ void InMemoryDB::rollback()
 	}
 
 	transactions = DB;
+	transactionInit = false;
 }
